@@ -28,4 +28,17 @@ https://habr.com/ru/articles/490586/ <br>
 Ссылки по теме: <br>
 https://spring.io/guides/gs/rest-service <br>
 https://www.baeldung.com/spring-boot-configure-tomcat <br>
+https://www.baeldung.com/exception-handling-for-rest-with-spring <br>
+Последняя ссылка полезна в плане обработки ошибок и выдачи клиенту понятных сообщений и
+http-статусов, т.к. по дефолту ваши исключения будут всегда на контроллере превращаться
+в 500 статус. Обращаем внимание на ControllerAdvice 
+
+<h4>Spring Boot 3 - JPA, лекция 1</h4>
+
+[Лекция на youtube](https://youtu.be/RbuL8Wk3wHE) <br>
+Первые шаги с ORM. <br>
+Ссылки по теме: <br>
+https://docs.spring.io/spring-data/jpa/reference/jpa.html - здесь можно 
+читать хоть все подразделы, подробная документация <br>
+https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa - здесь краткое описание технологии<br>
 
