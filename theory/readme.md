@@ -42,3 +42,21 @@ https://docs.spring.io/spring-data/jpa/reference/jpa.html - здесь можн�
 читать хоть все подразделы, подробная документация <br>
 https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa - здесь краткое описание технологии<br>
 
+<h4>Minio и Spring Boot</h4>
+
+> Лекция с прошлого года, где spring boot и java были ниже версиями, однако, сам подход не изменился
+
+[Лекция на youtube](https://youtu.be/KHIXDJKVoRk) <br>
+Ссылки по теме<br>
+Как поднять сам minio: https://min.io/docs/minio/container/index.html <br>
+
+## Материалы для изучения
+
+- Liquibase
+  - https://contribute.liquibase.com/extensions-integrations/directory/integration-docs/springboot/using-springboot-with-maven/
+  - https://www.baeldung.com/liquibase-refactor-schema-of-java-app <br>
+    _Тут разделы: 1, 2, 4 и 5 интересны_
+- Spring Security
+  - https://www.baeldung.com/get-user-in-spring-security
+  - https://www.baeldung.com/spring-security-method-security
+  - https://struchkov.dev/blog/ru/jwt-implementation-in-spring/
