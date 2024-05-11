@@ -60,12 +60,19 @@ https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa - здесь
   - https://www.baeldung.com/get-user-in-spring-security
   - https://www.baeldung.com/spring-security-method-security
   - https://struchkov.dev/blog/ru/jwt-implementation-in-spring/
+- Kafka
+  - https://www.baeldung.com/spring-kafka
+  - https://docs.spring.io/spring-kafka/reference/quick-tour.html
+
+> По Kafka в целом, требуется простое взаимодействие, без организации отдельный партиций и т.д. Достаточно настроить
+> consumer-ы и producer-ы, и пересылать через них сообщения самым простым способом
 
 ## Установка Apache Kafka
 
 Можно воспользоваться удобным способом поднятия кафки через docker-compose:
 <details>
-  <summary>Развернуть, docker-compose.yml</summary>
+
+  <summary>Пример docker-compose.yml (клик, чтобы развернуть)</summary>
 
 ```yaml
 version: "3"
@@ -103,6 +110,7 @@ services:
     links:
       - kafka
 ```
+
 </details>
 
 Если кафка физически будет расположена на иной машине, то в KAFKA_CFG_ADVERTISED_LISTENERS вместо localhost указывать
