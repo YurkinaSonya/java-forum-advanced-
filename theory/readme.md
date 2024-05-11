@@ -60,3 +60,53 @@ https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa - здесь
   - https://www.baeldung.com/get-user-in-spring-security
   - https://www.baeldung.com/spring-security-method-security
   - https://struchkov.dev/blog/ru/jwt-implementation-in-spring/
+
+## Установка Apache Kafka
+
+Можно воспользоваться удобным способом поднятия кафки через docker-compose:
+<details>
+  <summary>Развернуть, docker-compose.yml</summary>
+
+```yaml
+version: "3"
+
+services:
+  kafka:
+    image: 'bitnami/kafka:latest'
+    container_name: kafka
+    ports:
+      - '9092:9092'
+    environment:
+      - KAFKA_CFG_NODE_ID=0
+      - KAFKA_CFG_PROCESS_ROLES=controller,broker
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092,EXTERNAL://localhost:9094
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_MESSAGE_MAX_BYTES=33554432
+
+  akhq:
+    image: tchiotludo/akhq
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "kafka:9092"
+              connect:
+                - name: "connect"
+                  url: "http://connect:8083"
+    ports:
+      - 8080:8080
+    links:
+      - kafka
+```
+</details>
+
+Если кафка физически будет расположена на иной машине, то в KAFKA_CFG_ADVERTISED_LISTENERS вместо localhost указывать
+IP этой машины.
+
+На 8080 порту, как указано в примере docker.compose.yml, поднимается GUI, в котором можно смотреть топики кафка 
+и отправлять сообщения в них
