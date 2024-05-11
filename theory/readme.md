@@ -64,7 +64,7 @@ https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa - здесь
   - https://www.baeldung.com/spring-kafka
   - https://docs.spring.io/spring-kafka/reference/quick-tour.html
 
-> По Kafka в целом, требуется простое взаимодействие, без организации отдельный партиций и т.д. Достаточно настроить
+> По Kafka в целом требуется простое взаимодействие, без организации отдельных партиций и т.д. Достаточно настроить
 > consumer-ы и producer-ы, и пересылать через них сообщения самым простым способом
 
 ## Установка Apache Kafka
